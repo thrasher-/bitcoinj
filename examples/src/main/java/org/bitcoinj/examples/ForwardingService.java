@@ -28,7 +28,7 @@ import org.bitcoinj.crypto.KeyCrypterException;
 import org.bitcoinj.kits.WalletAppKit;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.RegTestParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.utils.BriefLogFormatter;
 import org.bitcoinj.wallet.SendRequest;
 import org.bitcoinj.wallet.Wallet;
@@ -62,7 +62,7 @@ public class ForwardingService {
         NetworkParameters params;
         String filePrefix;
         if (args.length > 1 && args[1].equals("testnet")) {
-            params = TestNet3Params.get();
+            params = TestNet4Params.get();
             filePrefix = "forwarding-service-testnet";
         } else if (args.length > 1 && args[1].equals("regtest")) {
             params = RegTestParams.get();

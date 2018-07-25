@@ -20,7 +20,7 @@ package org.bitcoinj.tools;
 import org.bitcoinj.crypto.*;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.RegTestParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.protocols.payments.PaymentProtocol;
 import org.bitcoinj.protocols.payments.PaymentProtocolException;
 import org.bitcoinj.protocols.payments.PaymentSession;
@@ -295,7 +295,7 @@ public class WalletTool {
                 chainFileName = new File("mainnet.chain");
                 break;
             case TEST:
-                params = TestNet3Params.get();
+                params = TestNet4Params.get();
                 chainFileName = new File("testnet.chain");
                 break;
             case REGTEST:

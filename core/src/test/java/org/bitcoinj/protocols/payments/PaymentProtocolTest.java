@@ -23,7 +23,7 @@ import org.bitcoinj.core.LegacyAddress;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.crypto.X509Utils;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.params.UnitTestParams;
 import org.bitcoinj.protocols.payments.PaymentProtocol.Output;
 import org.bitcoinj.protocols.payments.PaymentProtocol.PkiVerificationData;
@@ -47,7 +47,7 @@ import static org.junit.Assert.*;
 
 public class PaymentProtocolTest {
     private static final NetworkParameters UNITTEST = UnitTestParams.get();
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
 
     // static test data
     private static final Coin AMOUNT = Coin.SATOSHI;

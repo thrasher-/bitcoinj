@@ -21,7 +21,7 @@ import com.google.common.io.ByteStreams;
 
 import org.bitcoinj.core.AbstractBlockChain.NewBlockType;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.params.UnitTestParams;
 import org.bitcoinj.script.Script;
 import org.bitcoinj.script.ScriptOpCodes;
@@ -43,7 +43,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class BlockTest {
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters UNITTEST = UnitTestParams.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
 

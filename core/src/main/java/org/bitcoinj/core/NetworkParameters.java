@@ -120,11 +120,11 @@ public abstract class NetworkParameters {
             //
             //   "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
             byte[] bytes = Utils.HEX.decode
-                    ("04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73");
+                    ("04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536");
             t.addInput(new TransactionInput(n, t, bytes));
             ByteArrayOutputStream scriptPubKeyBytes = new ByteArrayOutputStream();
             Script.writeBytes(scriptPubKeyBytes, Utils.HEX.decode
-                    ("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f"));
+                    ("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9"));
             scriptPubKeyBytes.write(ScriptOpCodes.OP_CHECKSIG);
             t.addOutput(new TransactionOutput(n, t, FIFTY_COINS, scriptPubKeyBytes.toByteArray()));
         } catch (Exception e) {
@@ -135,8 +135,8 @@ public abstract class NetworkParameters {
         return genesisBlock;
     }
 
-    public static final int TARGET_TIMESPAN = 14 * 24 * 60 * 60;  // 2 weeks per difficulty cycle, on average.
-    public static final int TARGET_SPACING = 10 * 60;  // 10 minutes per block.
+    public static final int TARGET_TIMESPAN = 302400;  // (3.5 * 24 * 60 * 60) 3.5 days.
+    public static final int TARGET_SPACING = 150;  // (2.5 * 60) 2.5 minutes per block.
     public static final int INTERVAL = TARGET_TIMESPAN / TARGET_SPACING;
     
     /**
@@ -144,12 +144,12 @@ public abstract class NetworkParameters {
      * network rules in a soft-forking manner, that is, blocks that don't follow the rules are accepted but not
      * mined upon and thus will be quickly re-orged out as long as the majority are enforcing the rule.
      */
-    public static final int BIP16_ENFORCE_TIME = 1333238400;
+    public static final int BIP16_ENFORCE_TIME = 1349049710;
     
     /**
      * The maximum number of coins to be generated
      */
-    public static final long MAX_COINS = 21000000;
+    public static final long MAX_COINS = 84000000;
 
     /**
      * The maximum money to be generated
@@ -159,13 +159,13 @@ public abstract class NetworkParameters {
     /** Alias for TestNet3Params.get(), use that instead. */
     @Deprecated
     public static NetworkParameters testNet() {
-        return TestNet3Params.get();
+        return TestNet4Params.get();
     }
 
     /** Alias for TestNet3Params.get(), use that instead. */
     @Deprecated
-    public static NetworkParameters testNet3() {
-        return TestNet3Params.get();
+    public static NetworkParameters testNet4() {
+        return TestNet4Params.get();
     }
 
     /** Alias for MainNetParams.get(), use that instead */
@@ -213,7 +213,7 @@ public abstract class NetworkParameters {
         if (id.equals(ID_MAINNET)) {
             return MainNetParams.get();
         } else if (id.equals(ID_TESTNET)) {
-            return TestNet3Params.get();
+            return TestNet4Params.get();
         } else if (id.equals(ID_UNITTESTNET)) {
             return UnitTestParams.get();
         } else if (id.equals(ID_REGTEST)) {
@@ -229,7 +229,7 @@ public abstract class NetworkParameters {
         if (pmtProtocolId.equals(PAYMENT_PROTOCOL_ID_MAINNET)) {
             return MainNetParams.get();
         } else if (pmtProtocolId.equals(PAYMENT_PROTOCOL_ID_TESTNET)) {
-            return TestNet3Params.get();
+            return TestNet4Params.get();
         } else if (pmtProtocolId.equals(PAYMENT_PROTOCOL_ID_UNIT_TESTS)) {
             return UnitTestParams.get();
         } else if (pmtProtocolId.equals(PAYMENT_PROTOCOL_ID_REGTEST)) {

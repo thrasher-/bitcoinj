@@ -27,7 +27,7 @@ import java.io.ObjectOutputStream;
 import java.util.Locale;
 
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.script.Script;
 import org.bitcoinj.script.Script.ScriptType;
 import org.bitcoinj.script.ScriptBuilder;
@@ -38,7 +38,7 @@ import com.google.common.base.MoreObjects;
 
 public class SegwitAddressTest {
     private static final MainNetParams MAINNET = MainNetParams.get();
-    private static final TestNet3Params TESTNET = TestNet3Params.get();
+    private static final TestNet4Params TESTNET = TestNet4Params.get();
 
     @Test
     public void example_p2wpkh_mainnet() {

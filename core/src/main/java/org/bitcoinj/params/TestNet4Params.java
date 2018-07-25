@@ -34,38 +34,36 @@ import static com.google.common.base.Preconditions.checkState;
  * Parameters for the testnet, a separate public instance of Bitcoin that has relaxed rules suitable for development
  * and testing of applications and new Bitcoin versions.
  */
-public class TestNet3Params extends AbstractBitcoinNetParams {
+public class TestNet4Params extends AbstractBitcoinNetParams {
     public static final int TESTNET_MAJORITY_WINDOW = 100;
     public static final int TESTNET_MAJORITY_REJECT_BLOCK_OUTDATED = 75;
     public static final int TESTNET_MAJORITY_ENFORCE_BLOCK_UPGRADE = 51;
 
-    public TestNet3Params() {
+    public TestNet4Params() {
         super();
         id = ID_TESTNET;
-        packetMagic = 0x0b110907;
+        packetMagic = 0xfdd2c8f1;
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
-        maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        port = 18333;
+        maxTarget = Utils.decodeCompactBits(0x1e0ffff0L);
+        port = 19335;
         addressHeader = 111;
         p2shHeader = 196;
         dumpedPrivateKeyHeader = 239;
-        segwitAddressHrp = "tb";
-        genesisBlock.setTime(1296688602L);
-        genesisBlock.setDifficultyTarget(0x1d00ffffL);
-        genesisBlock.setNonce(414098458);
+        segwitAddressHrp = "tltc";
+        genesisBlock.setTime(1486949366L);
+        genesisBlock.setDifficultyTarget(0x1e0ffff0L);
+        genesisBlock.setNonce(293345);
         spendableCoinbaseDepth = 100;
-        subsidyDecreaseBlockCount = 210000;
+        subsidyDecreaseBlockCount = 840000;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        alertSigningKey = Utils.HEX.decode("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a");
+        checkState(genesisHash.equals("4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
+        alertSigningKey = Utils.HEX.decode("0449623fc74489a947c4b15d579115591add020e53b3490bf47297dfa3762250625f8ecc2fb4fc59f69bdce8f7080f3167808276ed2c79d297054367566038aa82");
 
         dnsSeeds = new String[] {
-                "testnet-seed.bitcoin.jonasschnelli.ch", // Jonas Schnelli
-                "testnet-seed.bluematt.me",              // Matt Corallo
-                "testnet-seed.bitcoin.petertodd.org",    // Peter Todd
-                "testnet-seed.bitcoin.schildbach.de",    // Andreas Schildbach
-                "bitcoin-testnet.bloqseeds.net",         // Bloq
+                "testnet-seed.litecointools.com", // Litecoin Foundation
+                "seed-b.litecoin.loshan.co.uk",   // Loshan
+                "dnsseed-testnet.thrasher.io",    // thrasher
         };
         addrSeeds = null;
         bip32HeaderPub = 0x043587CF;
@@ -76,10 +74,10 @@ public class TestNet3Params extends AbstractBitcoinNetParams {
         majorityWindow = TESTNET_MAJORITY_WINDOW;
     }
 
-    private static TestNet3Params instance;
-    public static synchronized TestNet3Params get() {
+    private static TestNet4Params instance;
+    public static synchronized TestNet4Params get() {
         if (instance == null) {
-            instance = new TestNet3Params();
+            instance = new TestNet4Params();
         }
         return instance;
     }

@@ -17,7 +17,7 @@
 package org.bitcoinj.core;
 
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.junit.Test;
 
 import static org.bitcoinj.core.Utils.HEX;
@@ -26,7 +26,7 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 
 public class PrefixedChecksummedBytesTest {
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
 
     private static class PrefixedChecksummedBytesToTest extends PrefixedChecksummedBytes {

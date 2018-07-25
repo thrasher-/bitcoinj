@@ -28,7 +28,7 @@ import org.bitcoinj.core.TransactionInput;
 import org.bitcoinj.core.TransactionOutput;
 import org.bitcoinj.crypto.TrustStoreLoader;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
 import org.bitcoin.protocols.payments.Protos;
@@ -45,7 +45,7 @@ import static org.bitcoinj.core.Coin.COIN;
 import static org.junit.Assert.*;
 
 public class PaymentSessionTest {
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
 
     private static final String simplePaymentUrl = "http://a.simple.url.com/";

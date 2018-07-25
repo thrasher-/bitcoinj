@@ -19,7 +19,7 @@ package org.bitcoinj.uri;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.LegacyAddress;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
@@ -33,7 +33,7 @@ public class BitcoinURITest {
     private BitcoinURI testObject = null;
 
     private static final NetworkParameters MAINNET = MainNetParams.get();
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final String MAINNET_GOOD_ADDRESS = "1KzTSfqjF2iKCduwz59nv2uqh1W2JsTxZH";
     private static final String MAINNET_GOOD_SEGWIT_ADDRESS = "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4";
     private static final String BITCOIN_SCHEME = MAINNET.getUriScheme();

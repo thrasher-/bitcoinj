@@ -30,7 +30,7 @@ import static org.junit.Assert.*;
  */
 public class ChildKeyDerivationTest {
     private static final NetworkParameters MAINNET = MainNetParams.get();
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters UNITTEST = UnitTestParams.get();
 
     private static final int HDW_CHAIN_EXTERNAL = 0;

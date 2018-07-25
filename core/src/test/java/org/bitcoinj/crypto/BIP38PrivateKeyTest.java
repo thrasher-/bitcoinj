@@ -22,7 +22,7 @@ import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.crypto.BIP38PrivateKey.BadPassphraseException;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -35,7 +35,7 @@ import static org.junit.Assert.assertNotSame;
 
 public class BIP38PrivateKeyTest {
     private static final NetworkParameters MAINNET = MainNetParams.get();
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
 
     @Test
     public void bip38testvector_noCompression_noEcMultiply_test1() throws Exception {

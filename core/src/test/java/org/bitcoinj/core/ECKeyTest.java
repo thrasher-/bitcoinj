@@ -23,7 +23,7 @@ import org.bitcoinj.crypto.KeyCrypter;
 import org.bitcoinj.crypto.KeyCrypterScrypt;
 import org.bitcoinj.crypto.TransactionSignature;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.params.UnitTestParams;
 import org.bitcoinj.utils.BriefLogFormatter;
 import com.google.common.collect.Lists;
@@ -61,7 +61,7 @@ public class ECKeyTest {
 
     private static CharSequence PASSWORD1 = "my hovercraft has eels";
     private static CharSequence WRONG_PASSWORD = "it is a snowy day today";
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
     private static final NetworkParameters UNITTEST = UnitTestParams.get();
 

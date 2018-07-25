@@ -20,7 +20,7 @@ package org.bitcoinj.examples;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.RegTestParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 
 public enum NetworkEnum {
     MAIN,
@@ -34,7 +34,7 @@ public enum NetworkEnum {
             case PROD:
                 return MainNetParams.get();
             case TEST:
-                return TestNet3Params.get();
+                return TestNet4Params.get();
             case REGTEST:
             default:
                 return RegTestParams.get();

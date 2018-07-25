@@ -18,7 +18,7 @@ package org.bitcoinj.core;
 
 import com.google.common.collect.*;
 import org.bitcoinj.core.listeners.*;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.testing.FakeTxBuilder;
 import org.bitcoinj.testing.InboundMessageQueuer;
 import org.bitcoinj.testing.TestWithNetworkConnections;
@@ -63,7 +63,7 @@ public class PeerTest extends TestWithNetworkConnections {
     private InboundMessageQueuer writeTarget;
     private static final int OTHER_PEER_CHAIN_HEIGHT = 110;
     private final AtomicBoolean fail = new AtomicBoolean(false);
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
 
     @Parameterized.Parameters
     public static Collection<ClientType[]> parameters() {

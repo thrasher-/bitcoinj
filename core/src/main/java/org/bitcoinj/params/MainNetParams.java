@@ -36,13 +36,13 @@ public class MainNetParams extends AbstractBitcoinNetParams {
         super();
         interval = INTERVAL;
         targetTimespan = TARGET_TIMESPAN;
-        maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
-        dumpedPrivateKeyHeader = 128;
-        addressHeader = 0;
+        maxTarget = Utils.decodeCompactBits(0x1e0ffff0L);
+        dumpedPrivateKeyHeader = 176;
+        addressHeader = 48;
         p2shHeader = 5;
-        segwitAddressHrp = "bc";
-        port = 8333;
-        packetMagic = 0xf9beb4d9L;
+        segwitAddressHrp = "ltc";
+        port = 9333;
+        packetMagic = 0xfbc0b6dbL;
         bip32HeaderPub = 0x0488B21E; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x0488ADE4; //The 4 byte header that serializes in base58 to "xprv"
 
@@ -50,14 +50,14 @@ public class MainNetParams extends AbstractBitcoinNetParams {
         majorityRejectBlockOutdated = MAINNET_MAJORITY_REJECT_BLOCK_OUTDATED;
         majorityWindow = MAINNET_MAJORITY_WINDOW;
 
-        genesisBlock.setDifficultyTarget(0x1d00ffffL);
-        genesisBlock.setTime(1231006505L);
-        genesisBlock.setNonce(2083236893);
+        genesisBlock.setDifficultyTarget(0x1e0ffff0L);
+        genesisBlock.setTime(1317972665L);
+        genesisBlock.setNonce(2084524493);
         id = ID_MAINNET;
-        subsidyDecreaseBlockCount = 210000;
+        subsidyDecreaseBlockCount = 840000;
         spendableCoinbaseDepth = 100;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"),
+        checkState(genesisHash.equals("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"),
                 genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
@@ -71,15 +71,11 @@ public class MainNetParams extends AbstractBitcoinNetParams {
         checkpoints.put(200000, Sha256Hash.wrap("000000000000034a7dedef4a161fa058a2d67a173a90155f3a2fe6fc132e0ebf"));
 
         dnsSeeds = new String[] {
-                "seed.bitcoin.sipa.be",         // Pieter Wuille
-                "dnsseed.bluematt.me",          // Matt Corallo
-                "dnsseed.bitcoin.dashjr.org",   // Luke Dashjr
-                "seed.bitcoinstats.com",        // Chris Decker
-                "seed.bitnodes.io",             // Addy Yeow
-                "bitseed.xf2.org",              // Jeff Garzik
-                "seed.bitcoin.jonasschnelli.ch",// Jonas Schnelli
-                "bitcoin.bloqseeds.net",        // Bloq
-                "seed.ob1.io",                  // OpenBazaar
+                "seed-a.litecoin.loshan.co.uk", // Loshan
+                "dnsseed.thrasher.io",          // thrasher
+                "dnsseed.litecointools.com",    // Litecoin Foundation
+                "dnsseed.litecoinpool.org",     // pooler
+                "dnsseed.koin-project.com",     
         };
         httpSeeds = new HttpDiscovery.Details[] {
                 // Andreas Schildbach

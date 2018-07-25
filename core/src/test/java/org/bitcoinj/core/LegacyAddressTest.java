@@ -19,7 +19,7 @@ package org.bitcoinj.core;
 
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.Networks;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.script.Script;
 import org.bitcoinj.script.ScriptBuilder;
 import org.bitcoinj.script.ScriptPattern;
@@ -37,7 +37,7 @@ import static org.bitcoinj.core.Utils.HEX;
 import static org.junit.Assert.*;
 
 public class LegacyAddressTest {
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
 
     @Test
@@ -153,7 +153,7 @@ public class LegacyAddressTest {
         LegacyAddress mainNetP2SHAddress = LegacyAddress.fromBase58(MainNetParams.get(), "35b9vsyH1KoFT5a5KtrKusaCcPLkiSo1tU");
         assertEquals(mainNetP2SHAddress.getVersion(), MAINNET.p2shHeader);
         assertEquals(ScriptType.P2SH, mainNetP2SHAddress.getOutputScriptType());
-        LegacyAddress testNetP2SHAddress = LegacyAddress.fromBase58(TestNet3Params.get(), "2MuVSxtfivPKJe93EC1Tb9UhJtGhsoWEHCe");
+        LegacyAddress testNetP2SHAddress = LegacyAddress.fromBase58(TestNet4Params.get(), "2MuVSxtfivPKJe93EC1Tb9UhJtGhsoWEHCe");
         assertEquals(testNetP2SHAddress.getVersion(), TESTNET.p2shHeader);
         assertEquals(ScriptType.P2SH, testNetP2SHAddress.getOutputScriptType());
 

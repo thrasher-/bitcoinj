@@ -18,7 +18,7 @@ package org.bitcoinj.tools;
 
 import org.bitcoinj.core.*;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.store.*;
 import org.bitcoinj.utils.BlockFileLoader;
 import com.google.common.base.Preconditions;
@@ -36,7 +36,7 @@ public class BlockImporter {
         
         NetworkParameters params;
         if (args[0].equals("test"))
-            params = TestNet3Params.get();
+            params = TestNet4Params.get();
         else
             params = MainNetParams.get();
         new Context(params);

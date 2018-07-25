@@ -24,7 +24,7 @@ import org.bitcoinj.core.*;
 import org.bitcoinj.core.Transaction.SigHash;
 import org.bitcoinj.crypto.TransactionSignature;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.script.Script.VerifyFlag;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -55,7 +55,7 @@ public class ScriptTest {
 
     static final String pubkeyProg = "76a91433e81a941e64cda12c6a299ed322ddbdd03f8d0e88ac";
 
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
     private static final NetworkParameters MAINNET = MainNetParams.get();
 
     private static final Logger log = LoggerFactory.getLogger(ScriptTest.class);

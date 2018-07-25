@@ -18,7 +18,7 @@
 package org.bitcoinj.examples;
 
 import org.bitcoinj.core.*;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 import org.bitcoinj.store.BlockStore;
 import org.bitcoinj.store.MemoryBlockStore;
 import org.bitcoinj.wallet.Wallet;
@@ -37,7 +37,7 @@ public class RefreshWallet {
         System.out.println(wallet.toString());
 
         // Set up the components and link them together.
-        final NetworkParameters params = TestNet3Params.get();
+        final NetworkParameters params = TestNet4Params.get();
         BlockStore blockStore = new MemoryBlockStore(params);
         BlockChain chain = new BlockChain(params, wallet, blockStore);
 

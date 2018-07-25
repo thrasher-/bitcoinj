@@ -29,11 +29,11 @@ import java.util.Arrays;
 
 import org.junit.Test;
 import org.bitcoinj.params.MainNetParams;
-import org.bitcoinj.params.TestNet3Params;
+import org.bitcoinj.params.TestNet4Params;
 
 public class DumpedPrivateKeyTest {
     private static final NetworkParameters MAINNET = MainNetParams.get();
-    private static final NetworkParameters TESTNET = TestNet3Params.get();
+    private static final NetworkParameters TESTNET = TestNet4Params.get();
 
     @Test
     public void checkNetwork() throws Exception {
