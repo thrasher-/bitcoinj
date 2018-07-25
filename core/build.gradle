@@ -26,6 +26,10 @@ sourceCompatibility = 1.7
 
 test {
     exclude 'org/bitcoinj/net/NetworkAbstractionTests*'
+
+    beforeTest{ descr ->
+        logger.warn("Starting Test ${descr.className} : ${descr.name}")
+    }
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {

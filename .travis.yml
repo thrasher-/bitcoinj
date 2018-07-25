@@ -8,12 +8,13 @@ install:
   - sudo apt-get -qq update
   - sudo apt-get install -y protobuf-compiler
 script:
-  - gradle -q clean install
+  - gradle clean install
   - jdk_switcher use openjdk7
   - cd core
-  - gradle -q clean build
+  - gradle test -i
+  - gradle clean build
 
 notifications:
   irc:
-    channels: "irc.freenode.net#bitcoinj"
+    channels: "irc.freenode.net#litecoinj"
     skip_join: true
