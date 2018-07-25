@@ -20,16 +20,19 @@ package org.bitcoinj.core;
 import com.google.common.annotations.*;
 import com.google.common.base.*;
 import com.google.common.collect.*;
+import com.lambdaworks.crypto.SCrypt;
 import org.bitcoinj.script.*;
 import org.slf4j.*;
 
 import javax.annotation.*;
 import java.io.*;
 import java.math.*;
+import java.security.GeneralSecurityException;
 import java.util.*;
 
 import static org.bitcoinj.core.Coin.*;
 import static org.bitcoinj.core.Sha256Hash.*;
+import static org.bitcoinj.core.ScryptHash.*;
 
 /**
  * <p>A block is a group of transactions, and is one of the fundamental data structures of the Bitcoin system.
@@ -103,6 +106,7 @@ public class Block extends Message {
 
     /** Stores the hash of the block. If null, getHash() will recalculate it. */
     private Sha256Hash hash;
+    private ScryptHash scryptHash;
 
     protected boolean headerBytesValid;
     protected boolean transactionBytesValid;
@@ -117,7 +121,7 @@ public class Block extends Message {
         super(params);
         // Set up a few basic things. We are not complete after this though.
         version = setVersion;
-        difficultyTarget = 0x1d07fff8L;
+        difficultyTarget = 0x1e0ffff0L;
         time = System.currentTimeMillis() / 1000;
         prevBlockHash = Sha256Hash.ZERO_HASH;
 
@@ -410,6 +414,18 @@ public class Block extends Message {
         }
     }
 
+    private ScryptHash calculateScryptHash() {
+        try {
+            ByteArrayOutputStream bos = new UnsafeByteArrayOutputStream(HEADER_SIZE);
+            writeHeader(bos);
+            return ScryptHash.wrapReversed(SCrypt.scrypt(bos.toByteArray(), bos.toByteArray(), 1024, 1, 1, 32));
+        } catch (IOException e) {
+            throw new RuntimeException(e); // Cannot happen.
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e); // Cannot happen.
+        }
+    }
+
     /**
      * Returns the hash of the block (which for a valid, solved block should be below the target) in the form seen on
      * the block explorer. If you call this on block 1 in the mainnet chain
@@ -428,6 +444,16 @@ public class Block extends Message {
         if (hash == null)
             hash = calculateHash();
         return hash;
+    }
+
+    public String getScryptHashAsString() {
+        return getScryptHash().toString();
+    }
+
+    public ScryptHash getScryptHash() {
+        if (scryptHash == null) 
+            scryptHash = calculateScryptHash();
+        return scryptHash;
     }
 
     /**
@@ -466,6 +492,7 @@ public class Block extends Message {
         block.difficultyTarget = difficultyTarget;
         block.transactions = null;
         block.hash = getHash();
+        block.scryptHash = getScryptHash();
     }
 
     /**
@@ -542,7 +569,7 @@ public class Block extends Message {
         // field is of the right value. This requires us to have the preceeding blocks.
         BigInteger target = getDifficultyTargetAsInteger();
 
-        BigInteger h = getHash().toBigInteger();
+        BigInteger h = getScryptHash().toBigInteger();
         if (h.compareTo(target) > 0) {
             // Proof of work check failed!
             if (throwException)
