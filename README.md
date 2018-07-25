@@ -1,10 +1,10 @@
-[![Build Status](https://travis-ci.org/bitcoinj/bitcoinj.png?branch=master)](https://travis-ci.org/bitcoinj/bitcoinj)   [![Coverage Status](https://coveralls.io/repos/bitcoinj/bitcoinj/badge.png?branch=master)](https://coveralls.io/r/bitcoinj/bitcoinj?branch=master) 
+[![Build Status](https://travis-ci.org/thrasher-/litecoinj.png?branch=master)](https://travis-ci.org/thrasher-/litecoinj)   [![Coverage Status](https://coveralls.io/repos/thrasher-/litecoinj/badge.png?branch=master)](https://coveralls.io/r/thrasher-/litecoinj?branch=master) 
 
-[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/bitcoinj.png)](https://kiwiirc.com/client/irc.freenode.net/bitcoinj)
+[![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/litecoinj.png)](https://kiwiirc.com/client/irc.freenode.net/litecoinj)
 
-### Welcome to bitcoinj
+### Welcome to litecoinj
 
-The bitcoinj library is a Java implementation of the Bitcoin protocol, which allows it to maintain a wallet and send/receive transactions without needing a local copy of Bitcoin Core. It comes with full documentation and some example apps showing how to use it.
+The litecoinj library is a Java implementation of the Litecoin protocol, which allows it to maintain a wallet and send/receive transactions without needing a local copy of Litecoin Core. It comes with full documentation and some example apps showing how to use it.
 
 ### Technologies
 
