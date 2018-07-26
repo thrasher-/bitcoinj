@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/thrasher-/litecoinj.png?branch=master)](https://travis-ci.org/thrasher-/litecoinj)   [![Coverage Status](https://coveralls.io/repos/thrasher-/litecoinj/badge.png?branch=master)](https://coveralls.io/r/thrasher-/litecoinj?branch=master) 
+[![Build Status](https://travis-ci.org/thrasher-/litecoinj.png?branch=master)](https://travis-ci.org/thrasher-/litecoinj)
+[![Coverage Status](https://coveralls.io/repos/github/thrasher-/litecoinj/badge.svg?branch=master)](https://coveralls.io/github/thrasher-/litecoinj?branch=master)
 
 [![Visit our IRC channel](https://kiwiirc.com/buttons/irc.freenode.net/litecoinj.png)](https://kiwiirc.com/client/irc.freenode.net/litecoinj)
 
