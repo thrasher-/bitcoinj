@@ -396,24 +396,24 @@ public class BlockChainTest {
     // Some blocks from the test net.
     private static Block getBlock2() throws Exception {
         Block b2 = new Block(TESTNET, Block.BLOCK_VERSION_GENESIS);
-        b2.setMerkleRoot(Sha256Hash.wrap("20222eb90f5895556926c112bb5aa0df4ab5abc3107e21a6950aec3b2e3541e2"));
-        b2.setNonce(875942400L);
-        b2.setTime(1296688946L);
-        b2.setDifficultyTarget(0x1d00ffff);
-        b2.setPrevBlockHash(Sha256Hash.wrap("00000000b873e79784647a6c82962c70d228557d24a747ea4d1b8bbe878e1206"));
-        assertEquals("000000006c02c8ea6e4ff69651f7fcde348fb9d557a06e6957b65552002a7820", b2.getHashAsString());
+        b2.setMerkleRoot(Sha256Hash.wrap("2221fad06ad90b27cb14e1d353124ad0391aebb64363d87805ca918de6071301"));
+        b2.setNonce(3345613568L);
+        b2.setTime(1486961936L);
+        b2.setDifficultyTarget(0x1e0ffff0);
+        b2.setPrevBlockHash(Sha256Hash.wrap("dc19bf491bf601e2a05fd37372f6dc1a51feba5f0f35cf944d39334e79790f5b"));
+        assertEquals("6c2a38bc422531d2fe7ba16c23207d90bcaaf997061b53c458d33c78fb385b90", b2.getHashAsString());
         b2.verifyHeader();
         return b2;
     }
 
     private static Block getBlock1() throws Exception {
         Block b1 = new Block(TESTNET, Block.BLOCK_VERSION_GENESIS);
-        b1.setMerkleRoot(Sha256Hash.wrap("f0315ffc38709d70ad5647e22048358dd3745f3ce3874223c80a7c92fab0c8ba"));
-        b1.setNonce(1924588547);
-        b1.setTime(1296688928);
-        b1.setDifficultyTarget(0x1d00ffff);
-        b1.setPrevBlockHash(Sha256Hash.wrap("000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943"));
-        assertEquals("00000000b873e79784647a6c82962c70d228557d24a747ea4d1b8bbe878e1206", b1.getHashAsString());
+        b1.setMerkleRoot(Sha256Hash.wrap("f7a718f20ea4529351892e70a563f1c58af5e720798e475cc677302ebef92513"));
+        b1.setNonce(4136305408L);
+        b1.setTime(1486961886L);
+        b1.setDifficultyTarget(0x1e0fffff);
+        b1.setPrevBlockHash(Sha256Hash.wrap("4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
+        assertEquals("dc19bf491bf601e2a05fd37372f6dc1a51feba5f0f35cf944d39334e79790f5b", b1.getHashAsString());
         b1.verifyHeader();
         return b1;
     }
