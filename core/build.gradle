@@ -30,6 +30,10 @@ test {
     beforeTest{ descr ->
         logger.warn("Starting Test ${descr.className} : ${descr.name}")
     }
+
+    afterTest { descr, result -> 
+        logger.warn("Finished Test ${descr.className} : ${descr.name} : ${result.resultType}")
+    }
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
